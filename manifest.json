@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Genie TTS 划词朗读 (极简版)",
+  "version": "1.0",
+  "description": "选中网页文字，右键调用本地 Genie TTS 服务流式朗读。",
+  "permissions": [
+    "contextMenus",
+    "offscreen"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:8000/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
