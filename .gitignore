@@ -1,0 +1,10 @@
+# OS Metadata
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Local Environment
+.env
+*.local
