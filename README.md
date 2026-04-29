@@ -20,9 +20,11 @@
 ## 🛠️ 安装指南
 
 1. **下载本项目**：
+
    ```bash
-   git clone https://github.com/your-username/Genie-TTS-Extension.git
+   git clone https://github.com/eacheat53/Genie-TTS-Extension.git
    ```
+
 2. **加载扩展**：
    - 打开 Chrome 浏览器，进入 `chrome://extensions/`。
    - 在右上角开启 **开发者模式**。
