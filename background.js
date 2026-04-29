@@ -34,10 +34,15 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
             // 确保创建了后台隐藏页面用于播放音频
             await setupOffscreenDocument('offscreen.html');
             
+            // 获取用户设置的语速
+            const storageData = await chrome.storage.local.get(['ttsSpeed']);
+            const currentSpeed = storageData.ttsSpeed || 1.0;
+            
             // 向隐藏页面发送消息，触发朗读
             chrome.runtime.sendMessage({
                 action: "play-tts",
-                text: text
+                text: text,
+                speed: currentSpeed
             });
         }
     }

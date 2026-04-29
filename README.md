@@ -8,6 +8,8 @@
 
 - 🚀 **流式播放**：利用 Offscreen Canvas 技术实现 PCM 流式音频解码与播放，无需等待整句合成完毕。
 - 🖱️ **划词唤起**：选中任意网页文本，右键即可一键朗读。
+- 🎛️ **实时热交互调速**：点击扩展图标弹出面板，随时用数字输入调节语速（倍速），即时生效。
+- 🎵 **工业级无损变速**：配合后端的 `pedalboard` 算法，实现完美不变调拉伸，告别电音发虚。
 - 🛠️ **极简架构**：基于 Manifest V3 标准开发，轻量且高效。
 - 📡 **本地优先**：直接连接本地 API，隐私安全，响应迅捷。
 
@@ -37,7 +39,9 @@
 ```text
 .
 ├── manifest.json      # 扩展配置文件
-├── background.js      # 后台服务脚本 (Context Menus)
+├── background.js      # 后台服务脚本 (Context Menus & 消息转发)
+├── popup.html         # 点击图标弹出的设置面板 UI
+├── popup.js           # 面板交互逻辑与状态同步
 ├── offscreen.html     # 隐藏音频处理页面
 ├── offscreen.js       # 音频解码与流式播放逻辑
 └── README.md          # 项目文档

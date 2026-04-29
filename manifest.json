@@ -5,8 +5,12 @@
   "description": "选中网页文字，右键调用本地 Genie TTS 服务流式朗读。",
   "permissions": [
     "contextMenus",
-    "offscreen"
+    "offscreen",
+    "storage"
   ],
+  "action": {
+    "default_popup": "popup.html"
+  },
   "host_permissions": [
     "http://127.0.0.1:8000/*"
   ],
