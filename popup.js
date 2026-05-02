@@ -1,10 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
     const input = document.getElementById('speedInput');
+    const charInput = document.getElementById('charInput');
 
-    // 从存储中加载上次设置的语速（默认 1.0）
-    chrome.storage.local.get(['ttsSpeed'], (result) => {
+    // 从存储中加载上次设置的语速和角色
+    chrome.storage.local.get(['ttsSpeed', 'ttsChar'], (result) => {
         const speed = result.ttsSpeed || 1.0;
         input.value = Number(speed).toFixed(1);
+        charInput.value = result.ttsChar || "feibi";
+    });
+
+    // 当用户输入角色名时保存
+    charInput.addEventListener('input', () => {
+        chrome.storage.local.set({ ttsChar: charInput.value.trim() || "feibi" });
     });
 
     // 当用户输入数字时，实时保存到本地
